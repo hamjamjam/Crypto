@@ -182,7 +182,13 @@ class AVClient:
     	return data
 
 
+client = AVClient()
 
+data = client.getCryptoTimeSeries('daily', 'BTC', 'USD')
+
+df = pd.DataFrame.from_dict(data)
+
+df.to_csv('Bitcoin.csv')
 
 
 
